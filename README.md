@@ -17,7 +17,7 @@ Within tutorials/GFT.py, i have written up motivating examples example using  QF
 <img width="1169" alt="rcqft _ _" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/6ec562e2-1044-4861-8227-2e10b56c97c4">
 
 
-* Applying RC to each  $QFT$ and it's inverse $QFT^{-1}$
+* Applying RC to $QFT$ and it's inverse $QFT^{-1}$
 
   
 <img width="1135" alt="qfinvqft" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/1ef21208-3dfb-4295-b984-142f86d05c78">
@@ -30,4 +30,4 @@ Within this simulation a transformation from Helbert space to Liouville space to
 
 
 ## References
-1- [[1](https://www.overleaf.com/read/ctxdfjzkqjnw)]
+1- (MAster thesis Mojahed[1(https://www.overleaf.com/read/ctxdfjzkqjnw)])
