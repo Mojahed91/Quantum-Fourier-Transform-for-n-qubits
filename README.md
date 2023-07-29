@@ -1,7 +1,7 @@
 
 # Characterizing Coherent Errors in Quantum Fourier Transform 
 
-The main goal of this project is to show by simulation how our protocol for quantifying the amount of coherent errors is applicable in a quantum circuit.
+The main goal of this project is to show by simulation how our protocol quantifies the amount of coherent errors in a quantum circuit.  The contained tutorials were created as a continuation of my master's research to publish as an article.
 
 # The Motivation Examples 
 We provide an example using  QFT (Quantum Fourier Transform). A coherent error (controlable and uncontrolable coherent errors) have been added to each CNOT in addtion to the effect of ADC (amplitude damping channel) to each crosse resonance.
