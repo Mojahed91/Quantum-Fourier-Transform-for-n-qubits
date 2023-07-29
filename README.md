@@ -17,13 +17,16 @@ Within tutorials/QFT.py, i have written up motivating examples example using  QF
 
 * Apply Randomiesed Compiling (RC) to each CNOT
 
-<img width="1169" alt="rcqft _ _" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/6ec562e2-1044-4861-8227-2e10b56c97c4">
+  The purpose of this step is to implemnt the KIK method et al. [1,2]. Deonted $QFT^{-1}$ by K and $QFT^{-1}$ by KI, therfore the controlable coherent errors are cancelled and we reman with the uncontrollabel coherent errors.
+  
+<img width="1135" alt="qfinvqft" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/1ef21208-3dfb-4295-b984-142f86d05c78">
 
 
 * Applying RC to $QFT$ and it's inverse $QFT^{-1}$
 
+  The implentation that prevent the cancelation of conrollable coherent errors, so it can be detected.
   
-<img width="1135" alt="qfinvqft" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/1ef21208-3dfb-4295-b984-142f86d05c78">
+<img width="1169" alt="rcqft _ _" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/6ec562e2-1044-4861-8227-2e10b56c97c4">
 
 
 ## Here are the main results.
