@@ -26,8 +26,8 @@ Within tutorials/GFT.py, i have written up motivating examples example using  QF
 
 ## The extraction of coherent errors assosiated with CNOT gate in 4-qubit QFT 
 
-Within this simulation a transformation from Helbert space to Liouville space took place. For further information look at Ref[1]
+Within this simulation a transformation from Helbert space to Liouville space took place. For further explination look at Ref[1]
 
 
-##References
+## References
 1- [[1](https://www.overleaf.com/read/ctxdfjzkqjnw)]
