@@ -34,4 +34,4 @@ Within tutorials/QFT.py, i have written up motivating examples example using  QF
 
 
 ## References
-1- (MAster thesis Mojahed[1(https://www.overleaf.com/read/ctxdfjzkqjnw)])
+1- (MAster thesis Mojahed[1](https://www.overleaf.com/read/ctxdfjzkqjnw)])
