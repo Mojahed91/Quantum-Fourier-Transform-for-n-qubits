@@ -4,7 +4,7 @@
 The main goal of this project is to show by simulation how our protocol quantifies the amount of coherent errors in a quantum circuit.  The contained tutorials were created as a continuation of my master's research to publish as an article.
 
 # The Motivation Examples 
-Within tutorials/QFT.py, I have written up motivating examples example using  QFT (Quantum Fourier Transform). A coherent error (controlable and uncontrolable coherent errors look at Ref[1]) have been added to each CNOT in addtion to the effect of ADC (amplitude damping channel) to each crosse resonance.
+Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantum Fourier Transform). A coherent error (controlable and uncontrolable coherent errors look at Ref[1]) have been added to each CNOT in addtion to the effect of ADC (amplitude damping channel) to each crosse resonance.
 
 ## The extraction of coherent errors assosiated with CNOT gate in 4-qubit QFT 
 
