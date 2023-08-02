@@ -36,6 +36,7 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 <img width="1218" alt="Screen Shot 2023-08-02 at 0 26 20" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/8b2aa9ab-4aaf-4d42-84ce-b5e177584954">
 
 
+<img width="1222" alt="Screen Shot 2023-08-02 at 10 10 15" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/324ff1ef-7ae4-42c1-8532-f391ee5b5a41">
 
 
 ## References
