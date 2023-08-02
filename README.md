@@ -19,18 +19,22 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 * Applying RC to $QFT$ and it's inverse $QFT^{-1}$
 
   The purpose of this step is to implemnt the KIK method et al. [1,2]. Deonted $QFT^{-1}$ by K and $QFT^{-1}$ by KI, therfore the controlable coherent errors are cancelled and we reman with the uncontrollabel coherent errors.
-  
-<img width="1135" alt="qfinvqft" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/1ef21208-3dfb-4295-b984-142f86d05c78">
+
+<img width="1149" alt="Screen Shot 2023-08-02 at 9 33 53" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/d6e50fe7-a822-4cc7-a31f-d75ffa55949d">
 
 
 * Apply Randomiesed Compiling (RC) to each CNOT
   
-  The implentation that prevent the cancelation of conrollable coherent errors, so it can be detected.
+  The implentation that prevent the cancelation of conrollable coherent errors.
   
-<img width="1169" alt="rcqft _ _" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/6ec562e2-1044-4861-8227-2e10b56c97c4">
+  <img width="1167" alt="Screen Shot 2023-08-02 at 10 04 59" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/cf037138-1478-4449-98f4-9882ed9448a6">
+
 
 
 ## Here are the main results.
+
+<img width="1218" alt="Screen Shot 2023-08-02 at 0 26 20" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/8b2aa9ab-4aaf-4d42-84ce-b5e177584954">
+
 
 
 
