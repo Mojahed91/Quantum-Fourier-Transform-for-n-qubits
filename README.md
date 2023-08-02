@@ -39,5 +39,8 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 <img width="1222" alt="Screen Shot 2023-08-02 at 10 10 15" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/324ff1ef-7ae4-42c1-8532-f391ee5b5a41">
 
 
+<img width="1163" alt="Screen Shot 2023-08-02 at 11 06 49" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/97d971ba-39df-4a71-8968-439fd4555f74">
+
+
 ## References
 1- [MAster thesis Mojahed](https://www.overleaf.com/read/ctxdfjzkqjnw)
