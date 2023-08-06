@@ -41,7 +41,8 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 
 * Fixing the incoherent error (ADC) and varying the coherent errors (Controlled and Uncontrolled), I mentor the change in the incoherent Pauli and Native error
 
-<img width="1285" alt="res4" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/5618c367-9187-46b4-8fff-dc494f006477">
+<img width="1285" alt="res4" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/ef8ef38f-ed7e-4dc0-926d-a9dc34a06507">
+
 
 
 ## References
