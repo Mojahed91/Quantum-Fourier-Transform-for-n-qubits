@@ -33,11 +33,8 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 
 * The variation in the error rate p with fixing the coherent error (Controlled and Uncontrolled)
 
-<img width="1218" alt="Screen Shot 2023-08-02 at 0 26 20" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/8b2aa9ab-4aaf-4d42-84ce-b5e177584954">
+<img width="1296" alt="res2" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/66858a5d-673e-45ea-9885-fbb0e40d9b13">
 
-*  I change the controlled coherent error and mentor the change in the incoherent infidelity with fix error rate
-
-<img width="1222" alt="Screen Shot 2023-08-02 at 10 10 15" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/324ff1ef-7ae4-42c1-8532-f391ee5b5a41">
 
 * Fixing the incoherent error (ADC) and varying the coherent errors (Controlled and Uncontrolled), I mentor the change in the incoherent Pauli and Native error
 
