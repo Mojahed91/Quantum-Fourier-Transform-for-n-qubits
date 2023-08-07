@@ -32,7 +32,8 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 ## Here are the main results.
 
 * The variation in the error rate p with fixing the coherent error (Controlled and Uncontrolled)
-* 
+
+
 <img width="1261" alt="res124" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/7e3b6c3a-6a79-40cf-a074-5f7d7e4039bd">
 
 
