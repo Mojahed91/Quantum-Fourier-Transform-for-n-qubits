@@ -12,8 +12,8 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 
   Within this simulation a transformation from Helbert space to Liouville space took place. For further explination look at Ref[1]
 
+<img width="1161" alt="qft_io" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/e2122986-9241-44a5-8968-fda381cecd26">
 
-<img width="1168" alt="qft_ _" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/82cc38a4-e661-4b21-914b-54d4b3580365">
 
 * Apply Randomiesed Compiling (RC) to each CNOT
   
