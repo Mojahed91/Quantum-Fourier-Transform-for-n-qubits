@@ -25,11 +25,7 @@ class KikCalculation:
 
         :param n: Number of qubits.
         :param rho_0: Initial state.
-        :param p: Strength of amplitude damping channel.
-        :param A_: Parameter A.
-        :param B_: Parameter B.
-        :param k_func: Function to compute k.
-        :param ki_func: Function to compute ki.
+        :param obj_quantum_cir: The quantum circuit implementation object.
         """
         self.n = n
         self.rho_0 = rho_0
