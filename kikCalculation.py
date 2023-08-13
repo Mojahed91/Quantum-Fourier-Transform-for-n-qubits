@@ -6,7 +6,6 @@ import matplotlib.ticker as tck
 
 
 # Color parameters
-COLOR = ['firebrick', 'royalblue', 'goldenrod', 'cadetblue', 'indigo']
 COLOR = ['firebrick', 'royalblue', 'goldenrod', 'goldenrod', 'indigo']
 MARKER_SIZE = 26
 LINE_STYLE = 'solid'
