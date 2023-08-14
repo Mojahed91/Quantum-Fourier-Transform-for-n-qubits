@@ -45,4 +45,4 @@ Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantu
 
 
 ## References
-1- [MAster thesis Mojahed](https://www.overleaf.com/read/ctxdfjzkqjnw)
+1- [Master thesis Mojahed](https://www.overleaf.com/read/ctxdfjzkqjnw)
