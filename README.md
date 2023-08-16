@@ -1,48 +1,58 @@
 
-# Characterizing Coherent Errors in Quantum Fourier Transform 
-
-The main goal of this project is to show by simulation how our protocol quantifies the amount of coherent errors in a quantum circuit.  The contained tutorials were created as a continuation of my master's research to publish as an article.
-
-# The Motivation Examples 
-Within tutorials/QFT.py, I have written up motivating example using  QFT (Quantum Fourier Transform). A coherent error (controlable and uncontrolable coherent errors look at Ref[1]) have been added to each CNOT in addtion to the effect of ADC (amplitude damping channel) to each crosse resonance.
-
-## The extraction of coherent errors assosiated with CNOT gate in 4-qubit QFT 
-
-* Simulate the 4-qubit QFT under the above asumptions
-
-  Within this simulation a transformation from Helbert space to Liouville space took place. For further explination look at Ref[1]
-
-<img width="1161" alt="qft_io" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/e2122986-9241-44a5-8968-fda381cecd26">
+# I. Characterizing Coherent Errors in Quantum Fourier Transform via Simulation
 
 
-* Apply Randomiesed Compiling (RC) to each CNOT
-  
-  The implentation that prevent the cancelation of conrollable coherent errors.
-  
-  <img width="1167" alt="Screen Shot 2023-08-02 at 10 04 59" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/cf037138-1478-4449-98f4-9882ed9448a6">
+The primary objective of this project is to demonstrate through simulation that our protocol can effectively measure the level of coherent errors in a quantum circuit. The included tutorials were developed as a follow-up to my master's research, intended for publication in an article.
+
+## The Motivation Examples 
+
+In the file simulations/main.py, I have provided an illustrative example using the Quantum Fourier Transform (QFT). I have introduced a coherent error (both controllable and uncontrollable coherent errors, as discussed in Ref[1]) to each CNOT gate. Additionally, the effect of the Amplitude Damping Channel (ADC) has been applied to each cross-resonance.
+
+To see if our approximations hold and provide the desired separation between controlled and uncontrolled coherent errors we validate and demonstrate our findings by simulating qunatum fourier transform (QFT). The way to achieve this is to vary the parameter controlling one type of error and fix the parameters of the other types of errors. The goal is to see that changing the incoherent error, for example, does not affect the coherent errors. In this simulation each CNOT gate is effected by the two types of coherent errors in addition to amplitude damming channel (ADC). We assume a noiseless single qubit gates. 
+
+## Extracting coherent errors related to the CNOT gate in a n-qubit Quantum Fourier Transform.
 
 
-* Applying RC to $QFT$ and it's inverse $QFT^{-1}$
+By employing CNOT gates, we can successfully carry out the QFT implementation. With 12 CNOT gates involved in the QFT of 4-qubits:
 
-  The purpose of this step is to implemnt the KIK method et al. [1,2]. Deonted $QFT^{-1}$ by K and $QFT^{-1}$ by KI, therfore the controlable coherent errors are cancelled and we reman with the uncontrollabel coherent errors.
-
-<img width="1149" alt="Screen Shot 2023-08-02 at 9 33 53" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/d6e50fe7-a822-4cc7-a31f-d75ffa55949d">
+   <img width="750" alt="qft_io" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/e2122986-9241-44a5-8968-fda381cecd26">
 
 
-## Here are the main results.
-
-* The variation in the error rate p with fixing the coherent error (Controlled and Uncontrolled)
+achieving a high fidelity in the two-qubit gates becomes crucial to observe captivating outcomes. Our initial testing of the protocol involves varying the strength of the amplitude damping channel, with two expected outcomes. Firstly, we must observe a change in incoherent infidelity when measuring the incoherent Pauli error and native error. Secondly, the variation in the amplitude damping channel's strength should not affect coherent errors. Therefore, when measuring the uncontrollable and controllable coherent errors using our protocol, these quantities should remain invariant. In Fig below, we present a simulation of the initial test. It's important to observe that the Pauli noise differs from the native noise, even in the absence of coherent errors. This variation occurs due to the influence of RC gates, which modify the profile of the native noise. Consequently, the magnitude of the Pauli noise compared to the native noise can either be greater or lesser, and this behavior is entirely depends on the initial state.
 
 
-<img width="1261" alt="res124" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/7e3b6c3a-6a79-40cf-a074-5f7d7e4039bd">
+The second test of the protocol involves altering the coherent errors and observing the measured quantities. There are three approaches to conducting this test. The first approach involves fixing the amount of controllable coherent error while varying the uncontrollable coherent errors. The second approach entails a changing function for both controllable and uncontrollable coherent errors. The last approach involves varying both controllable and uncontrollable coherent errors simultaneously. In all three cases, we should expect the following: the measurements of incoherent Pauli errors and native noise should remain the same, as we explained earlier. Additionally, intuitively, we should observe changes in the relevant coherent error throughout the testing process. Our simulation of the second test can be found below:
+
+
+  <img width="450" alt="res4" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/ef8ef38f-ed7e-4dc0-926d-a9dc34a06507">
 
 
 
-* Fixing the incoherent error (ADC) and varying the coherent errors (Controlled and Uncontrolled), I mentor the change in the incoherent Pauli and Native error
+In Fig below, we illustrate the process of applying an RC gate to a single $QFT$ circuit, 
 
-<img width="1285" alt="res4" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/ef8ef38f-ed7e-4dc0-926d-a9dc34a06507">
+  <img width="750" alt="Screen Shot 2023-08-02 at 10 04 59" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/cf037138-1478-4449-98f4-9882ed9448a6">
+
+
+while in here, we demonstrate the effect of the RC gate on the composition $QFT^{-1}QFT$.
+
+  <img width="750" alt="Screen Shot 2023-08-02 at 9 33 53" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/d6e50fe7-a822-4cc7-a31f-d75ffa55949d">
+
+
+# II. Characterizing Coherent Errors in IBM Quito backend and lagos backend
+
+
+The starting point of the investigation of the amount of coherent error and incoherent error on IBM quantum computer is by implementing Pulse inverse technique.
+
+
+<img width="750" alt="plcnot" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/8f8cd236-f996-4426-8985-c43d7e22013b">
+
+
+## Here are the main results of the experimental implementation
+
+<img width="1142" alt="ert" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/e516c662-1988-40f8-9fef-a464f4dd77eb">
 
 
 
+## Experimntal 
 ## References
 1- [Master thesis Mojahed](https://www.overleaf.com/read/ctxdfjzkqjnw)
