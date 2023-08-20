@@ -41,8 +41,13 @@ class KikCalculation:
     # list_sp : list of survival of probabilities
     # order : order of incoherent infidelity
     def incoherent_infidelity(self, order, list_sp):
-        """Compute series expansion of the order specified for calculating the incoherent infidelity using Raam Uzdin method.
-            For further explanation look at the article "Scalable evaluation of incoherent infidelity in quantum devices"
+        """
+        Compute series expansion of the order specified for calculating the incoherent infidelity using Raam Uzdin method.
+        For further explanation look at the article "Scalable evaluation of incoherent infidelity in quantum devices"
+        
+        :param order: Order of the expansion.
+        :param list_sp: List of survival probabilities.
+        :return: Calculated incoherent infidelity.
         """
         if len(list_sp) < order + 1:
             raise ValueError("list_sp doesn't have enough values for the given order")
