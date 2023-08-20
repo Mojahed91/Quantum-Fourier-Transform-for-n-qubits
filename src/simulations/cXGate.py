@@ -8,18 +8,47 @@ from qiskit import QuantumRegister, QuantumCircuit
 
 
 class CXGate(QuantumGate):
+    """
+    Represents a CNOT (controlled-X) gate in a quantum system.
+    
+    The CXGate class provides methods to create a CNOT gate for a specified control and target qubit, compute the 
+    amplitude damping channel for the CNOT gate, generate RC (Randomized Compiling) gates for the CNOT gate, and add 
+    coherent error to the CNOT gate.
+    
+    The class inherits from the QuantumGate base class, extending its functionality to specifically handle CNOT gates.
+    
+    Attributes:
+        n_qubits (int): The number of qubits in the quantum system.
+        c (int): The control qubit for the CNOT gate.
+        t (int): The target qubit for the CNOT gate.
+        NUM_RC_CX (int): Number of Randomized Compiling gates.
+        LEFT_RC (int): Index for left RC gate.
+        RIGHT_RC (int): Index for right RC gate.
+    """
     NUM_RC_CX = 16
     LEFT_RC = 0
     RIGHT_RC = 1
 
     def __init__(self, n_qubits, control, target):
+        """
+        Initializes the CXGate class with a given number of qubits, control qubit, and target qubit.
+
+        Args:
+            n_qubits (int): The number of qubits in the quantum system.
+            control (int): The control qubit for the CNOT gate.
+            target (int): The target qubit for the CNOT gate.
+        """
         super().__init__(n_qubits)
         self.c = control
         self.t = target
 
     def get_matrix(self):
-        """Create CX (controlled-X) matrices for given control and target qubits."""
+        """
+        Creates and returns the matrix representation of a CNOT gate for the specified control and target qubits.
 
+        Returns:
+            numpy.ndarray: The matrix representation of the CNOT gate.
+        """
         qc = QuantumCircuit(QuantumRegister(self.n))
 
         # Dictionary to store (c, t) to (cc, tt) mappings for different values of n
@@ -35,11 +64,27 @@ class CXGate(QuantumGate):
         return qi.Operator(qc).data.real
 
     def apply_channel_in_ls(self, error_channel):
+        """
+        Applies a given error channel to the Liouville matrix representation of the CNOT gate.
+
+        Args:
+            error_channel (numpy.ndarray): The error channel to be applied.
+
+        Returns:
+            numpy.ndarray: The modified Liouville matrix representation after applying the error channel.
+        """
         return np.dot(self.adc_channel(error_channel), self.get_liouville_matrix())
 
     def adc_channel(self, p):
-        """Compute Amplitude Damping Channel for the cx gate."""
+        """
+        Computes the Amplitude Damping Channel (ADC) for the CNOT gate.
 
+        Args:
+            p (float): The probability parameter for the amplitude damping channel.
+
+        Returns:
+            numpy.ndarray: The ADC matrix for the CNOT gate.
+        """
         k0 = [[1, 0], [0, np.sqrt(1 - p)]]
         k1 = [[0, np.sqrt(p)], [0, 0]]
 
@@ -55,8 +100,16 @@ class CXGate(QuantumGate):
         return np.dot(channel1, channel2)
 
     def get_rc_in_circ(self, item):
-        """Generate the RC gates for CNOT with specified control and target qubits."""
+        """
+        Generates the Randomized Compiling (RC) gates for the CNOT gate with specified control and target
+        qubits for system of n qubits.
 
+        Args:
+            item (int): The index of the RC gate.
+
+        Returns:
+            list of numpy.ndarray: The RC gates in matrix form.
+        """
         # Initialize lists with identity matrices
         ul_matrices = [Utilities.I for _ in range(self.n)]
         ur_matrices = [Utilities.I for _ in range(self.n)]
@@ -83,8 +136,15 @@ class CXGate(QuantumGate):
         return [ul, ur]
 
     def dress_by_rc_gate(self, obj):
-        """Dress up the CNOT gate with Randomised Compiling gates. """
-        dressed_cx = np.dot(IDGate(self.n).get_liouville_matrix(), 0)
+        """
+        Dresses up the CNOT gate with Randomized Compiling (RC) gates.
+
+        Args:
+            obj (numpy.ndarray): The object to be dressed by the RC gates.
+
+        Returns:
+            numpy.ndarray: The dressed CNOT gate in matrix form.
+        """        dressed_cx = np.dot(IDGate(self.n).get_liouville_matrix(), 0)
 
         for i in range(self.NUM_RC_CX):
             get_rc = self.get_rc_in_circ(i)
@@ -94,8 +154,18 @@ class CXGate(QuantumGate):
         return np.dot(dressed_cx, 1 / self.NUM_RC_CX)
 
     def add_coherent_error(self, is_backword, A, B, obj):
-        """Add both controlled and uncontrolled coherent error to a cx gate."""
+        """
+        Adds both controlled and uncontrolled coherent errors to a CNOT gate.
 
+        Args:
+            is_backword (bool): Indicates if the gate is applied in a backward direction.
+            A (float): Coefficient for the controlled coherent error.
+            B (float): Coefficient for the uncontrolled coherent error.
+            obj (numpy.ndarray): The object to which the coherent error is added.
+
+        Returns:
+            numpy.ndarray: The modified CNOT gate with added coherent errors.
+        """
         cont = self.rotate_cont_coh_error[0] if self.c == 0 else (self.rotate_cont_coh_error[1] if self.t == 0 else I)
         uncont = self.rotate_uncont_coh_error[0] if self.c == 0 else (self.rotate_uncont_coh_error[1] if self.t == 0 else I)
 
