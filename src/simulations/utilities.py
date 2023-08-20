@@ -2,6 +2,17 @@ import numpy as np
 
 
 class Utilities:
+    """
+    Contains static methods for performing operations on quantum gates, such as making liouville operators, computing tensor (Kronecker) products, and creating single qubit gates in an n-qubit system.
+
+    Constants:
+        X, Y, Z, I : Pauli matrices.
+        H : Hadamard matrix.
+        I4 : 4x4 Identity matrix.
+        lr, rr : Sets of 2-qubit operators for left and right operators.
+        cnot1 : CNOT matrix with control qubit 1.
+        pauli : List of Pauli matrices.
+    """
     # Constants and Globals
     X, Y, Z, I = [np.array([[0, 1], [1, 0]]),
                   np.array([[0, -1j], [1j, 0]]),
@@ -19,18 +30,46 @@ class Utilities:
 
     @staticmethod
     def make_liouville(oper):
+        """
+        Compute the Liouville representation of a given operator.
+
+        Args:
+            oper (np.array): The operator to be converted.
+
+        Returns:
+            np.array: The Liouville representation of the operator.
+        """
         return np.kron(oper, np.conj(oper))
 
     @staticmethod
     def recursive_kron(matrices):
+        """
+        Compute the Kronecker product of a list of matrices recursively.
+
+        Args:
+            matrices (list): List of matrices.
+
+        Returns:
+            np.array: The Kronecker product of the matrices.
+        """
         if len(matrices) == 1:
             return matrices[0]
         return np.kron(matrices[0], Utilities.recursive_kron(matrices[1:]))
 
     @staticmethod
     def create_kron_product(matrix1, matrix2, position, n):
-        """Compute tensor product of matrices a and b with respect to position in n-qubit system."""
+        """
+        Compute the tensor product of two matrices with respect to a position in an n-qubit system.
 
+        Args:
+            matrix1 (np.array): First matrix.
+            matrix2 (np.array): Second matrix.
+            position (int): Position in the n-qubit system.
+            n (int): Total number of qubits.
+
+        Returns:
+            np.array: The tensor product of the matrices with respect to the position.
+        """
         product = matrix1 if position == 0 else Utilities.I
         for i in range(1, n):
             next_matrix = matrix2 if position == i else Utilities.I
@@ -39,7 +78,17 @@ class Utilities:
 
     @staticmethod
     def single_q_gate_for_n_q(t, n, oper):
-        """Return single qubit gate for an n-qubit system."""
+        """
+        Return a single qubit gate for an n-qubit system.
+
+        Args:
+            t (int): Target qubit.
+            n (int): Total number of qubits.
+            oper (np.array): The single qubit gate.
+
+        Returns:
+            np.array: The single qubit gate for the n-qubit system.
+        """
         # Create a list of identity matrices
         matrices = [Utilities.I] * n
 
@@ -54,6 +103,16 @@ class Utilities:
         return result
 
     def single_q_gate_for_n_q_in_ls(t, n, oper):
-        """Return single qubit gate for an n-qubit system in liouville space."""
+                """
+        Return a single qubit gate for an n-qubit system in Liouville space.
+
+        Args:
+            t (int): Target qubit.
+            n (int): Total number of qubits.
+            oper (np.array): The single qubit gate.
+
+        Returns:
+            np.array: The single qubit gate for the n-qubit system in Liouville space.
+        """
         return Utilities.make_liouville(Utilities.single_q_gate_for_n_q(t, n, oper))
 
