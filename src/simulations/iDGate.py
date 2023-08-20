@@ -4,6 +4,18 @@ from utilities import Utilities
 
 
 class IDGate(QuantumGate):
+    """
+    Represents an Identity gate in a quantum system.
+    
+    The IDGate class provides methods to get the matrix representation of the identity gate, compute the inverse 
+    operation in Liouville space for a given number of qubits, and dress up the identity gate with Randomized Compiling 
+    (RC) gates.
+    
+    The class inherits from the QuantumGate base class, extending its functionality to specifically handle identity gates.
+    
+    Attributes:
+        n_qubits (int): The number of qubits in the quantum system.
+    """
     def __init__(self, n_qubits):
         """
         Initializes the IDGate class with a given number of qubits.
