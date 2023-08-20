@@ -11,7 +11,7 @@ In the file simulations/main.py, I have provided an illustrative example using t
 
 To see if our approximations hold and provide the desired separation between controlled and uncontrolled coherent errors we validate and demonstrate our findings by simulating qunatum fourier transform (QFT). The way to achieve this is to vary the parameter controlling one type of error and fix the parameters of the other types of errors. The goal is to see that changing the incoherent error, for example, does not affect the coherent errors. In this simulation each CNOT gate is effected by the two types of coherent errors in addition to amplitude damming channel (ADC). We assume a noiseless single qubit gates. 
 
-## Extracting coherent errors related to the CNOT gate in a n-qubit Quantum Fourier Transform.
+## Extracting Coherent Errors in n-Qubit Quantum Fourier Transform
 
 
 By employing CNOT gates, we can successfully carry out the QFT implementation. With 12 CNOT gates involved in the QFT of 4-qubits:
