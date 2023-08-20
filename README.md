@@ -3,7 +3,7 @@
 
 ## Introduction
 
-The primary objective of this project is to demonstrate through simulation that our protocol can effectively measure the level of coherent errors in a quantum circuit. The included tutorials were developed as a follow-up to my master's research, intended for publication in an article.
+This project aims to simulate the measurement of coherent errors in a quantum circuit and demonstrate the effectiveness of our protocol. The tutorials included in this repository are a continuation of my master's research and are intended for publication in a research article.
 
 ## Motivation and Examples 
 
