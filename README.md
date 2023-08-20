@@ -1,10 +1,11 @@
 
-# I. Characterizing Coherent Errors in Quantum Fourier Transform via Simulation
+# Characterizing Coherent Errors in Quantum Fourier Transform via Simulation
 
+## Introduction
 
 The primary objective of this project is to demonstrate through simulation that our protocol can effectively measure the level of coherent errors in a quantum circuit. The included tutorials were developed as a follow-up to my master's research, intended for publication in an article.
 
-## The Motivation Examples 
+## Motivation and Examples 
 
 In the file simulations/main.py, I have provided an illustrative example using the Quantum Fourier Transform (QFT). I have introduced a coherent error (both controllable and uncontrollable coherent errors, as discussed in Ref[1]) to each CNOT gate. Additionally, the effect of the Amplitude Damping Channel (ADC) has been applied to each cross-resonance.
 
@@ -45,7 +46,7 @@ while in here, we demonstrate the effect of the RC gate on the composition $QFT^
   <img width="750" alt="Screen Shot 2023-08-02 at 9 33 53" src="https://github.com/Mojahed91/QuantumFourierT/assets/129369338/d6e50fe7-a822-4cc7-a31f-d75ffa55949d">
 <p/>
 
-# II. Characterizing Coherent Errors in IBM Quito backend and lagos backend
+# Characterizing Coherent Errors in IBM Quito backend and lagos backend
 
 
 The starting point of the investigation of the amount of coherent error and incoherent error on IBM quantum computer is by implementing Pulse inverse technique.
