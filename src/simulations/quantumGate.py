@@ -49,7 +49,7 @@ class QuantumGate:
         :param rotate_cont_coh_error: List of controllable coherent errors for each qubit.
         :param rotate_uncont_coh_error: List of uncontrollable coherent errors for each qubit.
         """
-        for qubit in range(self.n):
+        for qubit in range(2):
             self.rotate_cont_coh_error[qubit] = rotate_cont_coh_error[qubit]
             self.rotate_uncont_coh_error[qubit] = rotate_uncont_coh_error[qubit]
 
